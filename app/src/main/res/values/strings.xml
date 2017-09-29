@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">SuperDealTest</string>
-    <string name="project_name">Project name</string>
-    <string name="github_repository">GitHub repository</string>
+    <string name="project_name">Super Deal Test</string>
+    <string name="github_repository">GitHub organisation</string>
 </resources>

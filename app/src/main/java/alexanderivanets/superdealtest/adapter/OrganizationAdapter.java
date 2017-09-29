@@ -1,7 +1,9 @@
 package alexanderivanets.superdealtest.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,12 +15,13 @@ import java.util.List;
 
 import alexanderivanets.superdealtest.R;
 import alexanderivanets.superdealtest.model.OrgCard;
+import alexanderivanets.superdealtest.view.RepoActivity;
 
 /**
  * Created by alexander on 29.09.17.
  */
 
-public class OrganizationAdapter extends RecyclerView.Adapter<OrganizationViewHolder> {
+public class OrganizationAdapter extends RecyclerView.Adapter<OrganizationViewHolder>{
     private List<OrgCard> orgCards;
     private Context context;
 
@@ -36,7 +39,7 @@ public class OrganizationAdapter extends RecyclerView.Adapter<OrganizationViewHo
 
     @Override
     public void onBindViewHolder(OrganizationViewHolder holder, int position) {
-        OrgCard card = orgCards.get( position );
+        final OrgCard card = orgCards.get( holder.getAdapterPosition() );
         holder.orgName.setText( card.getOrgName() );
         holder.orgBlog.setText( card.getOrgBlog() );
         holder.orgLocation.setText( card.getOrgLocation() );
@@ -44,12 +47,16 @@ public class OrganizationAdapter extends RecyclerView.Adapter<OrganizationViewHo
         Picasso.with(context).load( card.getImagePath() )
                 .into(holder.orgImage);
 
-        holder.clickListener = new View.OnClickListener() {
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(context, RepoActivity.class);
+                intent.putExtra("orgName", card.getOrgName());
+                intent.putExtra("orgRepos", card.getReposNumb());
+                context.startActivity(intent);
             }
-        };
+        });
 
     }
 

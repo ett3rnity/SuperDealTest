@@ -1,6 +1,7 @@
 package alexanderivanets.superdealtest.adapter;
 
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -17,8 +18,6 @@ public class OrganizationViewHolder extends RecyclerView.ViewHolder {
     protected TextView orgName;
     protected TextView orgLocation;
     protected TextView orgBlog;
-    protected View.OnClickListener clickListener;
-
 
 
     public OrganizationViewHolder(View itemView) {
@@ -29,6 +28,5 @@ public class OrganizationViewHolder extends RecyclerView.ViewHolder {
         orgImage = (ImageView) itemView.findViewById(R.id.iv_item_org);
 
     }
-
 
 }

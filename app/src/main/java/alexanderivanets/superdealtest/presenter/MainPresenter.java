@@ -19,12 +19,12 @@ import io.reactivex.schedulers.Schedulers;
  * Created by alexander on 29.09.17.
  */
 
-public class MainActivityPImpl implements IPresenter {
+public class MainPresenter implements IPresenter {
 
     private IActivity view;
     private Context context;
 
-    public MainActivityPImpl(MainActivity view, Context context){
+    public MainPresenter(MainActivity view, Context context){
         this.view = view;
         this.context = context;
     }
@@ -41,7 +41,7 @@ public class MainActivityPImpl implements IPresenter {
                     public OrgCard apply(@NonNull OrgResponse orgResponse) throws Exception {
                         return new OrgCard(orgResponse.getAvatarUrl(), orgResponse.getName(),
                                 orgResponse.getLocation(),  orgResponse.getBlog(),
-                                orgResponse.getReposUrl());
+                                orgResponse.getReposUrl(), orgResponse.getPublicRepos());
                     }
                 })
                 .subscribe(new Consumer<OrgCard>() {
