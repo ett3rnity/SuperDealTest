@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">SuperDealTest</string>
+    <string name="project_name">Project name</string>
+    <string name="github_repository">GitHub repository</string>
+</resources>
