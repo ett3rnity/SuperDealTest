@@ -2,4 +2,8 @@
     <string name="app_name">SuperDealTest</string>
     <string name="project_name">Super Deal Test</string>
     <string name="github_repository">GitHub organisation</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="recent_search">Recent Search</string>
 </resources>

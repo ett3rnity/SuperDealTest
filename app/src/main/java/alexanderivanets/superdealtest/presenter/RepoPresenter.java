@@ -1,5 +1,6 @@
 package alexanderivanets.superdealtest.presenter;
 
+import android.content.Context;
 import android.util.Log;
 
 import java.util.ArrayList;
@@ -27,14 +28,17 @@ import io.reactivex.schedulers.Schedulers;
 
 public class RepoPresenter implements IRepoPresenter {
     private IRepoActivity view;
+    private Context context;
 
-    public RepoPresenter(RepoActivity view){
+    public RepoPresenter(RepoActivity view, Context context){
         this.view = view;
+        this.context = context;
     }
 
     @Override
-    public void onGetInfo(String orgName) {
-        Observable<List<RepoResponse>> observable = RetrofitSingleton.getApi().getRepositories(orgName);
+    public void onGetInfo(String orgName, String page) {
+        Observable<List<RepoResponse>> observable =
+                RetrofitSingleton.getApi().getRepositories(orgName, page);
         observable.
                 subscribeOn(Schedulers.computation())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -61,7 +65,11 @@ public class RepoPresenter implements IRepoPresenter {
                         new Consumer<Throwable>() {
                             @Override
                             public void accept(@NonNull Throwable throwable) throws Exception {
-                                Log.v("ERROR", throwable.getLocalizedMessage().substring(0,9));
+                                if (!NetworkState.isConnected(context)){
+                                    view.onShowError("No internet connection");
+                                } else {
+                                    view.onShowError(throwable.getLocalizedMessage());
+                                }
                             }
                         });
 

@@ -5,5 +5,5 @@ package alexanderivanets.superdealtest.presenter;
  */
 
 public interface IRepoPresenter {
-    void onGetInfo( String orgName);
+    void onGetInfo( String orgName, String page);
 }

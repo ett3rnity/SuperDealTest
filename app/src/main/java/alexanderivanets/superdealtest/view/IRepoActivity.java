@@ -10,4 +10,5 @@ import alexanderivanets.superdealtest.model.RepoCard;
 
 public interface IRepoActivity {
     void onShowInfo(ArrayList<RepoCard> cards);
+    void onShowError(String e);
 }

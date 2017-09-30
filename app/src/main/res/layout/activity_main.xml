@@ -1,48 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="alexanderivanets.superdealtest.view.MainActivity"
-    android:focusable="true"
-    android:focusableInTouchMode="true"
-    android:id="@+id/rl_main">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/project_name"
-        android:id="@+id/tv_project_name"
-        android:textStyle="bold"
-        android:textSize="18sp"
-        android:layout_marginTop="32dp"
-        android:layout_centerHorizontal="true"/>
 
-    <EditText
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/et_input_main"
-        android:hint="@string/github_repository"
-        android:layout_marginLeft="12dp"
-        android:layout_marginRight="12dp"
-        android:layout_marginTop="16dp"
-        android:layout_below="@id/tv_project_name"
-        android:layout_centerHorizontal="true"
-        android:inputType="text"
-        android:imeOptions="actionDone"/>
+        tools:context="alexanderivanets.superdealtest.view.MainActivity"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:id="@+id/rl_main">
 
-    <android.support.v7.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/rv_main"
-        android:layout_below="@id/et_input_main"
-        android:layout_marginLeft="12dp"
-        android:layout_marginRight="12dp"
-        android:layout_marginTop="16dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/project_name"
+            android:id="@+id/tv_project_name"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_marginTop="32dp"
+            android:layout_centerHorizontal="true"/>
 
-    </android.support.v7.widget.RecyclerView>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/et_input_main"
+            android:hint="@string/github_repository"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginTop="16dp"
+            android:layout_below="@id/tv_project_name"
+            android:layout_centerHorizontal="true"
+            android:inputType="text"
+            android:imeOptions="actionDone"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rv_main"
+            android:layout_below="@id/et_input_main"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginTop="16dp">
+
+        </android.support.v7.widget.RecyclerView>
 
 
-</RelativeLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/fl_container_main"
+            android:layout_below="@id/rv_main"
+            android:layout_marginTop="64dp">
+        </FrameLayout>
+
+
+
+    </RelativeLayout>
+
